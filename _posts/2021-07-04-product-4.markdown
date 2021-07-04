@@ -3,7 +3,7 @@ layout: product
 pid: 4
 title:  "الحزمة المثالية"
 price: 369
-old_price: 540
+old_price: 410
 discount: true
 categories: product
 ---
