@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>{{ site.title }}</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <a href="/">
+      <img src="/assets/images/logo.svg" alt="AAA logo" class="logo">
+    </a>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <a class="contact" href="#contact">اتصل بنا</a>
+    <p class="copyright">© Copyright 2021. AAA Group.</p>
+  </footer>
+  <div id="contact" class="contact__modal">
+    <div class="contact__box">
+      <div class="contact__group">
+        <p>الهاتف (المغرب):</p>
+        <a href="tel:{{ site.phone_number }}" class="contact__phone">{{ site.phone_number }}</a>
+      </div>
+      <div class="contact__group">
+        <p>الهاتف (ليبيا):</p>
+        <a href="tel:{{ site.phone_number_2 }}" class="contact__phone">{{ site.phone_number_2 }}</a>
+      </div>
+      <div class="contact__group">
+        <p>الايميل:</p>
+        <a href="mailto:{{ site.email }}" class="contact__email">{{ site.email }}</a>
+      </div>
+      <a href="#" class="contact__close">أغلق</a>
+    </div>
+  </div>
+</body>
+</html>

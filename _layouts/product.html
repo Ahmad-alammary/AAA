@@ -1,0 +1,33 @@
+---
+layout: master
+---
+
+<div class="display">
+  <div class="display__info">
+    <a href="/" class="backlink">عد الى الصفحة الرئيسية</a>
+    <p class="display__name">{{ page.title }}</p>
+    <p class="display_description">{{ content }}</p>
+    {%- if page.discount -%}
+      <p class="discount">!Solde</p>
+    {%- endif -%}
+    <p class="display__price">
+      <span><b>السعر :</b></span>
+      {%- if page.old_price -%}
+        <span class="price-old">{{ page.old_price }}</span>
+        <span class="price-new">{{ page.price }}</span>
+      {%- else -%}
+        <span>{{ page.price }}</span>
+      {%- endif -%}
+      <span>دينار</span>
+    </p>
+    <a href="tel:{{ site.phone_number }}" class="display__order">اطلب عبر الهاتف</a>
+    <a
+      href="https://api.whatsapp.com/send?phone={{ site.phone_number }}&text=أريد أن أطلب: {{ page.title }}" class="display__order"
+    >اطلب عبر الواتساب</a>
+  </div>
+  <img
+    src="/assets/images/products/{{ page.pid }}.jpg"
+    alt="product image"
+    class="display__image"
+  >
+</div>

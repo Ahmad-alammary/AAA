@@ -1,0 +1,28 @@
+---
+layout: master
+---
+
+<div class="products">
+  {% for post in site.posts reversed %}
+    <a href="{{ post.url }}" class="product">
+      <img
+        src="/assets/images/products/{{ post.pid }}.jpg"
+        alt="product image"
+        class="product__image"
+      >
+      {%- if post.discount -%}
+        <p class="discount">!Solde</p>
+      {%- endif -%}
+      <p class="product__name">{{ post.title }}</p>
+      <p class="product__price">
+        {%- if post.old_price -%}
+          <span class="price-old">{{ post.old_price }}</span>
+          <span class="price-new">{{ post.price }}</span>
+        {%- else -%}
+          <span>{{ post.price }}</span>
+        {%- endif -%}
+        <span>دينار</span>
+      </p>
+    </a>
+  {% endfor %}
+</div>

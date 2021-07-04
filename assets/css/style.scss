@@ -1,0 +1,263 @@
+---
+---
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  // max-width: 1200px;
+  padding: 0 36px;
+  margin: 0;
+  // margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: hsl(38, 52%, 62%);
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid hsl(38, 52%, 62%);
+  padding: 52px 0 24px;
+}
+
+.logo {
+  height: 72px;
+}
+
+main {
+  max-width: 1200px;
+  padding-bottom: calc(128px + 52px);
+  margin: 52px auto 0;
+}
+
+.backlink {
+  display: flex;
+  flex-direction: column;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-decoration: none;
+  color: hsl(38, 52%, 62%);
+  width: fit-content;
+  &::after {
+    content: '';
+    display: block;
+    background-color: hsl(38, 52%, 62%);
+    width: 100%;
+    height: 1px;
+    transform-origin: right bottom;
+    transform: scaleX(0);
+    transition: transform 100ms ease-in;
+  }
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+  grid-gap: 36px;
+}
+
+.product {
+  display: grid;
+  grid-gap: 8px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 0 0 0 white, 0 0 0 0 black;
+  transition: box-shadow 100ms ease-in;
+  &:hover {
+    box-shadow: 0 0 0 7px white, 0 0 0 8px black;
+  }
+  &__image {
+    width: 100%;
+    display: block;
+  }
+  &__name {
+    font-size: 24px;
+  }
+  &__price {
+    span {
+      margin: 0 2px;
+    }
+  }
+}
+
+.display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+  grid-gap: 16px;
+  &__image {
+    width: 100%;
+  }
+  &__info {
+    display: grid;
+    grid-gap: 16px;
+    height: fit-content;
+  }
+  &__name {
+    font-size: 24px;
+  }
+  &__description {
+    line-height: 1.5;
+  }
+  &__price {
+    span {
+      margin: 0 2px;
+    }
+  }
+  &__order {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 100%;
+    text-decoration: none;
+    box-shadow: 0 0 0 0 white, 0 0 0 0 black;
+    transition: box-shadow 100ms ease-in;
+    &:hover {
+      box-shadow: 0 0 0 3px white, 0 0 0 4px black;
+    }
+  }
+}
+
+.discount {
+  background-color: crimson;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.price-new {
+  font-size: 22px;
+}
+.price-old {
+  text-decoration: line-through;
+  color: crimson;
+}
+
+.notfound {
+  display: grid;
+  grid-gap: 16px;
+  justify-items: center;
+  align-items: center;
+  &__message {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+
+footer {
+  height: 128px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 24px 0;
+}
+
+.contact {
+  width: fit-content;
+  color: hsl(38, 52%, 62%);
+  text-decoration: none;
+  padding: 13px 0;
+  margin-bottom: 12px;
+  position: relative;
+  &::after {
+    content: '';
+    background-color: hsl(38, 52%, 62%);
+    height: 1px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+  }
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: hsl(38, 52%, 62%);
+    backdrop-filter: blur(24px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 100ms ease-in-out;
+    &:target {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  &__box {
+    background-color: black;
+    display: grid;
+    grid-gap: 36px;
+    letter-spacing: 1px;
+    padding: 48px;
+  }
+  &__group {
+    display: grid;
+    grid-gap: 4px;
+  }
+  &__phone {
+    &::after {
+      content: '+';
+    }
+  }
+  &__close {
+    justify-self: center;
+  }
+}
+
+.copyright {
+  direction: ltr;
+  align-self: center;
+  font-size: 12px;
+}
+
+// Scroll bar
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(38, 52%, 62%);
+}
