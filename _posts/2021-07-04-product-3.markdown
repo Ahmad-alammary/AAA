@@ -1,7 +1,7 @@
 ---
 layout: product
 pid: 3
-title:  "زيت النفيسة 50 مل"
+title:  "زيت النفيسة 50ML"
 price: 110
 categories: product
 ---

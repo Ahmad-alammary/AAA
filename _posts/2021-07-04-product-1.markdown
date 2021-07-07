@@ -1,7 +1,7 @@
 ---
 layout: product
 pid: 1
-title:  "زيت الاركان الطبيعي 50 مل"
+title:  "زيت الاركان الطبيعي 50ML"
 price: 105
 categories: product
 ---
