@@ -3,7 +3,8 @@ layout: master
 ---
 
 <div class="products">
-  {% for post in site.posts reversed %}
+  {% assign sorted_by_pid = site.posts | sort: 'pid' %}
+  {% for post in sorted_by_pid %}
     <a href="{{ post.url }}" class="product">
       <img
         src="/assets/images/products/{{ post.pid }}.jpg"
