@@ -1,8 +1,8 @@
 ---
 layout: product
-pid: 11
-title:  "زيت اركان الاصلي 100ML"
-price: 169
+pid: 12
+title:  "زيت اركان الاصلي 250ML"
+price: 420
 categories: product
 ---
 
